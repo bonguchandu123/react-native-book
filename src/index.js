@@ -1,11 +1,15 @@
 import express from "express"
 import { connectDB } from "./lib/db.js";
 import "dotenv/config"
+import job from "./lib/cron.js";
 
 
 import router from "./routes/authRoutes.js";
 import brouter from "./routes/bookRoutes.js";
 import cors from "cors"
+
+
+job.start()
 
 connectDB()
 
